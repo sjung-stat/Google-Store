@@ -24,7 +24,7 @@ This is how Google Store looks like:
   - You can download the dataset used in this project
     [here](https://www.kaggle.com/c/ga-customer-revenue-prediction/data).
   - Please note that we use the previous version of dataset (not the
-    train\_v2.csv and test\_v2.csv).
+    files named train\_v2.csv and test\_v2.csv).
   - This project builds a LightGBM model so your computer needs to have
     the “lightgbm” library. Please refer to this [installation
     guide](https://lightgbm.readthedocs.io/en/latest/Installation-Guide.html)
