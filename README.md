@@ -15,7 +15,7 @@ And lastly, we build two machine learning models, XGBoost and LightGBM,
 to predict how much a visitor will spend.
 
 This is how Google Store looks like:
-![](C:\\Users\\Martin\\Desktop\\Google%20Store\\Google-Store/GoogleStore.png)
+![](C:\\Users\\Martin\\Desktop\\Google%20Store\\Google-Store\\GoogleStore.png)
 
 -----
 
