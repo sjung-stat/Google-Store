@@ -1166,7 +1166,7 @@ xgb.crossval <- xgb.cv(params = param.xgb, data = train_matrix_xgb, nrounds = 10
     ## [11] train-rmse:1.594047+0.004349    test-rmse:1.641866+0.019812 
     ## [21] train-rmse:1.558062+0.005252    test-rmse:1.633854+0.018414 
     ## [31] train-rmse:1.532244+0.006829    test-rmse:1.631991+0.017902 
-    ## [41] train-rmse:1.510060+0.005581    test-rmse:1.631777+0.018838 
+    ## [41] train-rmse:1.510060+0.005581    test-rmse:1.631777+0.018837 
     ## [51] train-rmse:1.492071+0.007199    test-rmse:1.633478+0.019144 
     ## Stopping. Best iteration:
     ## [34] train-rmse:1.525287+0.005421    test-rmse:1.631442+0.018772
@@ -1176,7 +1176,7 @@ xgb.crossval <- xgb.cv(params = param.xgb, data = train_matrix_xgb, nrounds = 10
 xgb.default <- xgb.train(params = param.xgb, data = train_matrix_xgb, nrounds = xgb.crossval$best_iteration, watchlist = list(val=test_matrix_xgb, train=train_matrix_xgb), print.every.n = 10, early.stop.round = 10, maximize = F , eval_metric = "rmse")
 ```
 
-    ## [18:13:27] WARNING: amalgamation/../src/learner.cc:480: 
+    ## [22:20:55] WARNING: amalgamation/../src/learner.cc:480: 
     ## Parameters: { early_stop_round, print_every_n } might not be used.
     ## 
     ##   This may not be accurate due to some parameters are only used in language bindings but
@@ -1235,7 +1235,7 @@ model <- lgb.cv(params, train_matrix_lgbm, 500, nfold = 5, min_data = 5,depth=4,
     ## [LightGBM] [Warning] Unknown parameter: leaves
     ## [LightGBM] [Warning] Unknown parameter: row_sample
     ## [LightGBM] [Warning] Unknown parameter: depth
-    ## [LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.095259 seconds.
+    ## [LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.179867 seconds.
     ## You can set `force_row_wise=true` to remove the overhead.
     ## And if memory is not enough, you can set `force_col_wise=true`.
     ## [LightGBM] [Info] Total Bins 556
@@ -1253,7 +1253,7 @@ model <- lgb.cv(params, train_matrix_lgbm, 500, nfold = 5, min_data = 5,depth=4,
     ## [LightGBM] [Warning] Unknown parameter: leaves
     ## [LightGBM] [Warning] Unknown parameter: row_sample
     ## [LightGBM] [Warning] Unknown parameter: depth
-    ## [LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.089273 seconds.
+    ## [LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.084197 seconds.
     ## You can set `force_row_wise=true` to remove the overhead.
     ## And if memory is not enough, you can set `force_col_wise=true`.
     ## [LightGBM] [Info] Total Bins 556
@@ -1271,7 +1271,24 @@ model <- lgb.cv(params, train_matrix_lgbm, 500, nfold = 5, min_data = 5,depth=4,
     ## [LightGBM] [Warning] Unknown parameter: leaves
     ## [LightGBM] [Warning] Unknown parameter: row_sample
     ## [LightGBM] [Warning] Unknown parameter: depth
-    ## [LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.081951 seconds.
+    ## [LightGBM] [Warning] Auto-choosing col-wise multi-threading, the overhead of testing was 0.185025 seconds.
+    ## You can set `force_col_wise=true` to remove the overhead.
+    ## [LightGBM] [Info] Total Bins 556
+    ## [LightGBM] [Info] Number of data points in the train set: 542191, number of used features: 10
+    ## [LightGBM] [Warning] Unknown parameter: col_sample
+    ## [LightGBM] [Warning] Unknown parameter: leaves
+    ## [LightGBM] [Warning] Unknown parameter: row_sample
+    ## [LightGBM] [Warning] Unknown parameter: depth
+    ## [LightGBM] [Warning] Unknown parameter: col_sample
+    ## [LightGBM] [Warning] Unknown parameter: leaves
+    ## [LightGBM] [Warning] Unknown parameter: row_sample
+    ## [LightGBM] [Warning] Unknown parameter: depth
+    ## [LightGBM] [Warning] learning_rate is set=0.01, learning_rate=0.01 will be ignored. Current value: learning_rate=0.01
+    ## [LightGBM] [Warning] Unknown parameter: col_sample
+    ## [LightGBM] [Warning] Unknown parameter: leaves
+    ## [LightGBM] [Warning] Unknown parameter: row_sample
+    ## [LightGBM] [Warning] Unknown parameter: depth
+    ## [LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.063612 seconds.
     ## You can set `force_row_wise=true` to remove the overhead.
     ## And if memory is not enough, you can set `force_col_wise=true`.
     ## [LightGBM] [Info] Total Bins 556
@@ -1289,25 +1306,7 @@ model <- lgb.cv(params, train_matrix_lgbm, 500, nfold = 5, min_data = 5,depth=4,
     ## [LightGBM] [Warning] Unknown parameter: leaves
     ## [LightGBM] [Warning] Unknown parameter: row_sample
     ## [LightGBM] [Warning] Unknown parameter: depth
-    ## [LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.068311 seconds.
-    ## You can set `force_row_wise=true` to remove the overhead.
-    ## And if memory is not enough, you can set `force_col_wise=true`.
-    ## [LightGBM] [Info] Total Bins 556
-    ## [LightGBM] [Info] Number of data points in the train set: 542191, number of used features: 10
-    ## [LightGBM] [Warning] Unknown parameter: col_sample
-    ## [LightGBM] [Warning] Unknown parameter: leaves
-    ## [LightGBM] [Warning] Unknown parameter: row_sample
-    ## [LightGBM] [Warning] Unknown parameter: depth
-    ## [LightGBM] [Warning] Unknown parameter: col_sample
-    ## [LightGBM] [Warning] Unknown parameter: leaves
-    ## [LightGBM] [Warning] Unknown parameter: row_sample
-    ## [LightGBM] [Warning] Unknown parameter: depth
-    ## [LightGBM] [Warning] learning_rate is set=0.01, learning_rate=0.01 will be ignored. Current value: learning_rate=0.01
-    ## [LightGBM] [Warning] Unknown parameter: col_sample
-    ## [LightGBM] [Warning] Unknown parameter: leaves
-    ## [LightGBM] [Warning] Unknown parameter: row_sample
-    ## [LightGBM] [Warning] Unknown parameter: depth
-    ## [LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.051555 seconds.
+    ## [LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.048250 seconds.
     ## You can set `force_row_wise=true` to remove the overhead.
     ## And if memory is not enough, you can set `force_col_wise=true`.
     ## [LightGBM] [Info] Total Bins 556
@@ -1370,7 +1369,7 @@ lgb.model <- lgb.train(params = params,
     ## [LightGBM] [Warning] Unknown parameter: depth
     ## [LightGBM] [Warning] learning_rate is set=0.01, learning_rate=0.01 will be ignored. Current value: learning_rate=0.01
     ## [LightGBM] [Warning] learning_rate is set=0.01, learning_rate=0.01 will be ignored. Current value: learning_rate=0.01
-    ## [LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.039635 seconds.
+    ## [LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.033912 seconds.
     ## You can set `force_row_wise=true` to remove the overhead.
     ## And if memory is not enough, you can set `force_col_wise=true`.
     ## [LightGBM] [Info] Total Bins 556
@@ -1384,3 +1383,10 @@ lgb.model <- lgb.train(params = params,
     ## [501]:   train's rmse:1.67895    valid's rmse:1.74462 
     ## [601]:   train's rmse:1.67176    valid's rmse:1.74393 
     ## [701]:   train's rmse:1.6661 valid's rmse:1.74352
+
+### Conclusion
+
+We can see that the XGBoost model performs better than LightGBM Model.
+XGBoost has lower train and validation RMSE than that LightGBM. However,
+please note that once I upgrade my machine, I will try to optimize the
+models by tuning parameters and then compare their performances again.
